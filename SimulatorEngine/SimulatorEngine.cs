@@ -7,6 +7,8 @@ namespace SimulatorEngine
 {
     public class GameEngine
     {
+		public static float s_maxDeltaTime = 0.05f;
+
         // All root game objects will be inside this.
         public List<GameObject> m_rootGameObjects = new List<GameObject>();
         DateTime m_time = DateTime.Now;
@@ -28,6 +30,7 @@ namespace SimulatorEngine
         private void update()
         {
             float deltaTime = (float)(DateTime.Now.Subtract(m_time).TotalSeconds);
+			deltaTime = Math.Min(deltaTime, s_maxDeltaTime);
             m_time = DateTime.Now;
             foreach (GameObject gameObj in m_rootGameObjects)
             {

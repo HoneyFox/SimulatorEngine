@@ -40,6 +40,7 @@ MissileObject : AircraftObject : SceneObject
 			IRLogic : SensorLogic : LogicObject
 			VisualLogic : SensorLogic : LogicObject
 		PayloadLogic : LogicObject >> AircraftObject / SubmarineObject
+			DetonatorLogic : LogicObject
 			LauncherLogic : LogicObject
 	SideLogic : LogicObject
 	RenderObject
@@ -76,7 +77,8 @@ SubmarineObject : SceneObject
 		TargetControlLogic : LogicObject
 			PassiveSonarLogic : SonarLogic : SensorLogic : LogicObject
 			ActiveSonarLogic : SonarLogic : SensorLogic : LogicObject
-		LauncherLogic : PayloadLogic : LogicObject >> SubmarineObject / AircraftObject
+		PayloadLogic : LogicObject >> SubmarineObject / AircraftObject
+			LauncherLogic : LogicObject
 	SideLogic : LogicObject
 	RenderObject
 
