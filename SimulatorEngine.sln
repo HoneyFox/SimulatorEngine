@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulatorEngine", "SimulatorEngine\SimulatorEngine.csproj", "{43476CEC-F3F4-4799-85FF-4D5D7A6E64F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavalWarfare", "NavalWarfare\NavalWarfare.csproj", "{19BF8582-0B48-40B8-B100-0D8E2C2BBF22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43476CEC-F3F4-4799-85FF-4D5D7A6E64F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43476CEC-F3F4-4799-85FF-4D5D7A6E64F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43476CEC-F3F4-4799-85FF-4D5D7A6E64F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43476CEC-F3F4-4799-85FF-4D5D7A6E64F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BF8582-0B48-40B8-B100-0D8E2C2BBF22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BF8582-0B48-40B8-B100-0D8E2C2BBF22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BF8582-0B48-40B8-B100-0D8E2C2BBF22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BF8582-0B48-40B8-B100-0D8E2C2BBF22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

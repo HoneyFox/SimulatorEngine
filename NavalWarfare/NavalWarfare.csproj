@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19BF8582-0B48-40B8-B100-0D8E2C2BBF22}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NavalWarfare</RootNamespace>
+    <AssemblyName>NavalWarfare</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>NavalWarfare.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\Kerbal Space Program v0.19\KSP_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGame.Designer.cs">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogicObjects\AeroDragLogic.cs" />
+    <Compile Include="LogicObjects\AutoPilotLogic.cs" />
+    <Compile Include="LogicObjects\ConstantForce.cs" />
+    <Compile Include="LogicObjects\DragLogic.cs" />
+    <Compile Include="LogicObjects\JetEngineLogic.cs" />
+    <Compile Include="LogicObjects\PropellerLogic.cs" />
+    <Compile Include="LogicObjects\PropulsionLogic.cs" />
+    <Compile Include="LogicObjects\SensorContactLogic.cs" />
+    <Compile Include="LogicObjects\SensorLogic.cs" />
+    <Compile Include="LogicObjects\TargetControlLogic.cs" />
+    <Compile Include="LogicObjects\TurnLogic.cs" />
+    <Compile Include="LogicObjects\WaterDragLogic.cs" />
+    <Compile Include="NavalWarfare.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LogicObjects\SimplePhysicsLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimulatorEngine\SimulatorEngine.csproj">
+      <Project>{43476CEC-F3F4-4799-85FF-4D5D7A6E64F3}</Project>
+      <Name>SimulatorEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

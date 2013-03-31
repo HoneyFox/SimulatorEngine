@@ -1,0 +1,46 @@
+VesselObject : SceneObject
+	VesselLogic : LogicObject
+		SimplePhysicsLogic : LogicObject
+			PropellerLogic : PropulsionLogic : LogicObject
+			WaterDragLogic : DragLogic : LogicObject
+			TurnLogic : LogicObject
+			AutoPilotLogic : LogicObject >> PropulsionLogic, DragLogic, TurnLogic
+				UserPilotCommand : LogicObject
+			BuoyancyLogic : LogicObject
+		TargetControlLogic : LogicObject
+			PassiveSonarLogic : SonarLogic : SensorLogic : LogicObject
+			ActiveSonarLogic : SonarLogic : SensorLogic : LogicObject
+		PayloadLogic : LogicObject >> SubmarineObject / AircraftObject
+			LauncherLogic : LogicObject
+			
+	RenderObject
+
+SubmarineObject : SceneObject
+	SubmarineLogic : VesselLogic : LogicObject
+		SimplePhysicsLogic : PropulsionLogic : LogicObject
+			PropellerLogic : PropulsionLogic : LogicObject
+			WaterDragLogic : DragLogic : LogicObject
+			TurnLogic : LogicObject
+			AutoPilotLogic : LogicObject >> PropulsionLogic, DragLogic, TurnLogic
+				UserPilotCommand : LogicObject
+			BuoyancyLogic : LogicObject
+		TargetControlLogic : LogicObject
+			PassiveSonarLogic : SonarLogic : SensorLogic : LogicObject
+			ActiveSonarLogic : SonarLogic : SensorLogic : LogicObject
+		LauncherLogic : PayloadLogic : LogicObject >> SubmarineObject / AircraftObject
+
+TorpedoObject : SubmarineObject : SceneObject
+	TorpedoLogic : SubmarineLogic : LogicObject
+		SimplePhysicsLogic : PropulsionLogic : LogicObject
+			PropellerLogic : PropulsionLogic : LogicObject
+			WaterDragLogic : DragLogic : LogicObject
+			TurnLogic : LogicObject
+			AutoPilotLogic : LogicObject >> PropulsionLogic, DragLogic, TurnLogic
+				UserPilotCommand : LogicObject
+			BuoyancyLogic : LogicObject
+		TargetControlLogic : LogicObject
+			PassiveSonarLogic : SonarLogic : SensorLogic : LogicObject
+			ActiveSonarLogic : SonarLogic : SensorLogic : LogicObject
+		PayloadLogic : LogicObject >> SubmarineObject / AircraftObject
+			DetonatorLogic : LogicObject
+			LauncherLogic : LogicObject
