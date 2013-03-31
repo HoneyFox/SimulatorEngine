@@ -1,3 +1,49 @@
+RootGameObjects:
+	SceneRoot : LogicObject
+		List<GameObject>
+		List<SideLogic>
+		...
+
+
+The following are inside SceneRoot.List<GameObject>:
+
+AircraftObject : SceneObject
+	AircraftLogic : LogicObject
+		SimplePhysicsLogic : LogicObject
+			JetEngine : PropulsionLogic : LogicObject
+			AeroDragLogic : DragLogic : LogicObject
+			TurnLogic : LogicObject
+			AutoPilotLogic : LogicObject >> PropulsionLogic, DragLogic, TurnLogic
+				UserPilotCommand : LogicObject
+			BouyancyLogic : LogicObject
+		TargetControlLogic : LogicObject
+			RadarLogic : SensorLogic : LogicObject
+			ESMLogic : SensorLogic : LogicObject
+			IRLogic : SensorLogic : LogicObject
+			VisualLogic : SensorLogic : LogicObject
+		PayloadLogic : LogicObject >> AircraftObject
+			LauncherLogic : LogicObject
+	SideLogic : LogicObject
+	RenderObject
+
+MissileObject : AircraftObject : SceneObject
+	MissileLogic : AircraftLogic : LogicObject
+		SimplePhysicsLogic : LogicObject
+			JetEngine : PropulsionLogic : LogicObject
+			AeroDragLogic : DragLogic : LogicObject
+			TurnLogic : LogicObject
+			AutoPilotLogic : LogicObject >> PropulsionLogic, DragLogic, TurnLogic
+				UserPilotCommand : LogicObject
+		TargetControlLogic : LogicObject
+			RadarLogic : SensorLogic : LogicObject
+			ESMLogic : SensorLogic : LogicObject
+			IRLogic : SensorLogic : LogicObject
+			VisualLogic : SensorLogic : LogicObject
+		PayloadLogic : LogicObject >> AircraftObject / SubmarineObject
+			LauncherLogic : LogicObject
+	SideLogic : LogicObject
+	RenderObject
+
 VesselObject : SceneObject
 	VesselLogic : LogicObject
 		SimplePhysicsLogic : LogicObject
@@ -10,9 +56,12 @@ VesselObject : SceneObject
 		TargetControlLogic : LogicObject
 			PassiveSonarLogic : SonarLogic : SensorLogic : LogicObject
 			ActiveSonarLogic : SonarLogic : SensorLogic : LogicObject
-		PayloadLogic : LogicObject >> SubmarineObject / AircraftObject
+			RadarLogic : SensorLogic : LogicObject
+			ESMLogic : SensorLogic : LogicObject
+			VisualLogic : SensorLogic : LogicObject
+		PayloadLogic : LogicObject >> SubmarineObject / VesselObject / AircraftObject
 			LauncherLogic : LogicObject
-			
+	SideLogic : LogicObject
 	RenderObject
 
 SubmarineObject : SceneObject
@@ -28,6 +77,8 @@ SubmarineObject : SceneObject
 			PassiveSonarLogic : SonarLogic : SensorLogic : LogicObject
 			ActiveSonarLogic : SonarLogic : SensorLogic : LogicObject
 		LauncherLogic : PayloadLogic : LogicObject >> SubmarineObject / AircraftObject
+	SideLogic : LogicObject
+	RenderObject
 
 TorpedoObject : SubmarineObject : SceneObject
 	TorpedoLogic : SubmarineLogic : LogicObject
@@ -44,3 +95,7 @@ TorpedoObject : SubmarineObject : SceneObject
 		PayloadLogic : LogicObject >> SubmarineObject / AircraftObject
 			DetonatorLogic : LogicObject
 			LauncherLogic : LogicObject
+	SideLogic : LogicObject
+	RenderObject
+
+...

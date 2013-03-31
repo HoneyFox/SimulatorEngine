@@ -27,7 +27,7 @@ namespace NavalWarfare
 
 		protected override void runPreLogic(float deltaTime)
 		{
-			SceneObject sceneRoot = NavalWarfare.GetInstance().findRootGameObjectOfType<SceneObject>();
+			LogicObject sceneRoot = NavalWarfare.GetInstance().findRootGameObjectOfType<LogicObject>();
 			m_contacts.Clear();
 			foreach(GameObject gameObj in sceneRoot.m_gameObjects)
 			{
