@@ -8,7 +8,7 @@ RootGameObjects:
 The following are inside SceneRoot.List<GameObject>:
 
 AircraftObject : SceneObject
-	AircraftLogic : LogicObject
+	AircraftLogic : TypeLogic : LogicObject
 		SimplePhysicsLogic : LogicObject
 			JetEngine : PropulsionLogic : LogicObject
 			AeroDragLogic : DragLogic : LogicObject
@@ -26,7 +26,7 @@ AircraftObject : SceneObject
 	SideLogic : LogicObject
 	RenderObject
 
-MissileObject : AircraftObject : SceneObject
+MissileObject : AircraftObject : TypeLogic : SceneObject
 	MissileLogic : AircraftLogic : LogicObject
 		SimplePhysicsLogic : LogicObject
 			JetEngine : PropulsionLogic : LogicObject
@@ -46,7 +46,7 @@ MissileObject : AircraftObject : SceneObject
 	RenderObject
 
 VesselObject : SceneObject
-	VesselLogic : LogicObject
+	VesselLogic : TypeLogic : LogicObject
 		SimplePhysicsLogic : LogicObject
 			PropellerLogic : PropulsionLogic : LogicObject
 			WaterDragLogic : DragLogic : LogicObject
@@ -66,7 +66,7 @@ VesselObject : SceneObject
 	RenderObject
 
 SubmarineObject : SceneObject
-	SubmarineLogic : VesselLogic : LogicObject
+	SubmarineLogic : VesselLogic : TypeLogic : LogicObject
 		SimplePhysicsLogic : PropulsionLogic : LogicObject
 			PropellerLogic : PropulsionLogic : LogicObject
 			WaterDragLogic : DragLogic : LogicObject
@@ -83,7 +83,7 @@ SubmarineObject : SceneObject
 	RenderObject
 
 TorpedoObject : SubmarineObject : SceneObject
-	TorpedoLogic : SubmarineLogic : LogicObject
+	TorpedoLogic : SubmarineLogic : TypeLogic : LogicObject
 		SimplePhysicsLogic : PropulsionLogic : LogicObject
 			PropellerLogic : PropulsionLogic : LogicObject
 			WaterDragLogic : DragLogic : LogicObject
