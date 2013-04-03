@@ -6,7 +6,7 @@ using SimulatorEngine;
 
 namespace NavalWarfare
 {
-	public class SensorLogic : LogicObject
+	public class SensorLogic : LogicObject, IToggleable
 	{
 		public TargetControlLogic p_targetControlLogic
 		{
@@ -15,7 +15,9 @@ namespace NavalWarfare
 		}
 
 		public List<SensorContactLogic> m_contacts = new List<SensorContactLogic>();
-		
+
+		private bool m_active = true;
+
 		public SensorLogic(GameObject parentObj = null)
 		{
 			m_parentObject = parentObj;
@@ -29,13 +31,28 @@ namespace NavalWarfare
 		{
 			LogicObject sceneRoot = NavalWarfare.GetInstance().findRootGameObjectOfType<LogicObject>();
 			m_contacts.Clear();
-			foreach(GameObject gameObj in sceneRoot.m_gameObjects)
+			if (m_active)
 			{
-				if (gameObj is SceneObject)
+				foreach (GameObject gameObj in sceneRoot.m_gameObjects)
 				{
-					m_contacts.Add(new SensorContactLogic(this, (gameObj as SceneObject)));
+					if (gameObj is SceneObject)
+					{
+						m_contacts.Add(new SensorContactLogic(this, (gameObj as SceneObject)));
+					}
 				}
 			}
-		} 
+		}
+
+		public bool Active
+		{
+			get
+			{
+				return m_active;
+			}
+			set
+			{
+				m_active = value;
+			}
+		}
 	}
 }

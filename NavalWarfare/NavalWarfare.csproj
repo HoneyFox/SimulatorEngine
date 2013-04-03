@@ -54,6 +54,7 @@
     <Compile Include="FormGame.Designer.cs">
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IToggleable.cs" />
     <Compile Include="LogicObjects\AeroDragLogic.cs" />
     <Compile Include="LogicObjects\AutoPilotLogic.cs" />
     <Compile Include="LogicObjects\ConstantForce.cs" />
