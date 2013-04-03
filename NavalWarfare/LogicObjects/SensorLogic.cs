@@ -31,7 +31,7 @@ namespace NavalWarfare
 			m_contacts.Clear();
 			foreach(GameObject gameObj in sceneRoot.m_gameObjects)
 			{
-				if (gameObj is TypeObject)
+				if (gameObj is SceneObject)
 				{
 					m_contacts.Add(new SensorContactLogic(this, (gameObj as SceneObject)));
 				}

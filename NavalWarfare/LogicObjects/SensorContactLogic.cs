@@ -9,7 +9,7 @@ namespace NavalWarfare
 	public class SensorContactLogic : LogicObject
 	{
 		public SensorLogic p_sensorLogic = null;
-		public TypeLogic mTarget = null;
+		public SceneObject mTarget = null;
 
 		public SensorContactLogic(GameObject parentObj = null, SceneObject targetObj = null)
 		{

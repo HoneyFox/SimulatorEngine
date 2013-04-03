@@ -19,8 +19,10 @@ namespace NavalWarfare.LogicObjects
             base.runPreLogic(deltaTime);
             foreach (SensorContactLogic contact in m_contacts)
             {
+                
                 SimplePhysicsLogic physicsLogic = contact.mTarget.findGameObjectOfType<TypeLogic>().findGameObjectOfType<SimplePhysicsLogic>();
-                if (physicsLogic.m_ReflectionArea * (float)m_attributes["RadarEfficiencyFactor"] > (float)m_attributes["DetectionTransmitPower"])
+                float Distance = ((m_parentObject.m_parentObject.findGameObjectOfType<SimplePhysicsLogic>().m_position - physicsLogic.m_position)).sqrMagnitude;
+                if ((physicsLogic.m_ReflectionArea * (float)m_attributes["RadarEfficiencyFactor"] )/(Distance*Distance)> (float)m_attributes["DetectionTransmitPower"])
                     m_detections.Add(contact);
             }
         }
