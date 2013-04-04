@@ -31,7 +31,7 @@ namespace NavalWarfare
 		}
 
 		public float m_mass;
-        public float m_ReflectionArea;
+        public float m_radarCrossSection;
 		protected override void runPreLogic(float deltaTime)
 		{
 			m_impulseForces.Clear();
