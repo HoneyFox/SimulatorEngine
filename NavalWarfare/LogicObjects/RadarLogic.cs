@@ -22,7 +22,7 @@ namespace NavalWarfare
                 float distanceSqr = ((m_parentObject.m_parentObject.findGameObjectOfType<SimplePhysicsLogic>().m_position - physicsLogic.m_position)).sqrMagnitude;
 				
 				// Remove targets that cannot be detected.
-				if ((physicsLogic.m_radarCrossSection * (float)m_attributes["RadarEfficiencyFactor"]) / (distanceSqr * distanceSqr) < (float)m_attributes["DetectionThreshold"])
+				if ((physicsLogic.m_radarCrossSection * (float)m_attributes["RadarEfficiencyFactor"]) / (distanceSqr * distanceSqr) < (float)m_attributes["DetectionThreshold"]&&m_parentObject.m_parentObject.findGameObjectOfType<SimplePhysicsLogic>().m_position.z>=0)
 					m_contacts.Remove(contact);
             }
         }
