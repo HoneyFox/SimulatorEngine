@@ -32,7 +32,7 @@ namespace NavalWarfare
 		{
             if (p_simplePhysicsLogic != null&&!m_parentObject.findGameObjectOfType<DamageLogic>().isOperational())
 			{
-				m_BuoyancyForce.force=-(UnityEngine.Vector3.up)*(int)m_attributes["SinkBuoyancy"];
+				m_BuoyancyForce.force=-(UnityEngine.Vector3.forward)*(int)m_attributes["SinkBuoyancy"];
 			}
             
     }
