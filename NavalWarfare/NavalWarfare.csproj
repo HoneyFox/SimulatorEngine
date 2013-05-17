@@ -72,6 +72,7 @@
     <Compile Include="Interfaces\IToggleable.cs" />
     <Compile Include="LogicObjects\AeroDragLogic.cs" />
     <Compile Include="LogicObjects\AutoPilotLogic.cs" />
+    <Compile Include="LogicObjects\BuoyancyLogic.cs" />
     <Compile Include="LogicObjects\ConstantForce.cs" />
     <Compile Include="LogicObjects\DamageLogic.cs" />
     <Compile Include="LogicObjects\DragLogic.cs" />
