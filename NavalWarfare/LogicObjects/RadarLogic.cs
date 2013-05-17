@@ -25,6 +25,13 @@ namespace NavalWarfare
 				if ((physicsLogic.m_radarCrossSection * (float)m_attributes["RadarEfficiencyFactor"]) / (distanceSqr * distanceSqr) < (float)m_attributes["DetectionThreshold"]&&m_parentObject.m_parentObject.findGameObjectOfType<SimplePhysicsLogic>().m_position.z>=0)
 					m_contacts.Remove(contact);
             }
+            foreach (SensorContactLogic contact in m_contacts)
+            {
+                if (contact.findGameObjectOfType<TargetControlLogic>() != null)
+                    if (contact.findGameObjectOfType<TargetControlLogic>().findGameObjectOfType<ESMLogic>() != null)
+                        contact.findGameObjectOfType<TargetControlLogic>().findGameObjectOfType<ESMLogic>().ScoutedBy(this);
+            }
+
         }
 
     }

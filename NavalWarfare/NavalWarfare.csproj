@@ -76,6 +76,7 @@
     <Compile Include="LogicObjects\ConstantForce.cs" />
     <Compile Include="LogicObjects\DamageLogic.cs" />
     <Compile Include="LogicObjects\DragLogic.cs" />
+    <Compile Include="LogicObjects\ESMLogic.cs" />
     <Compile Include="LogicObjects\JetEngineLogic.cs" />
     <Compile Include="LogicObjects\PropellerLogic.cs" />
     <Compile Include="LogicObjects\PropulsionLogic.cs" />

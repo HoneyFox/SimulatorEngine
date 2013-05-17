@@ -29,11 +29,11 @@ namespace NavalWarfare
 			}
 		}
         protected override void runPostLogic(float deltaTime)
-		{
-            if (p_simplePhysicsLogic != null&&!m_parentObject.findGameObjectOfType<DamageLogic>().isOperational())
-			{
-				m_BuoyancyForce.force=-(UnityEngine.Vector3.forward)*(int)m_attributes["SinkBuoyancy"];
-			}
-            
+        {
+            if (p_simplePhysicsLogic != null && !m_parentObject.findGameObjectOfType<DamageLogic>().isOperational())
+            {
+                m_BuoyancyForce.force = -(UnityEngine.Vector3.forward) * (int)m_attributes["SinkBuoyancy"];
+            }
+        }
     }
 }
