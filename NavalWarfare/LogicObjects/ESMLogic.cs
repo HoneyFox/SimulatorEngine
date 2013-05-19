@@ -8,6 +8,10 @@ namespace NavalWarfare
 {
     class ESMLogic:SensorLogic
     {
+        public ESMLogic()
+        {
+
+        }
         public ESMLogic(GameObject parentObj = null)
         {
             m_attributes.Add("DetectionThreshold", 1.0f);

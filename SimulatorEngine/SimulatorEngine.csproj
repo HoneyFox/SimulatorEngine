@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="EventMessage.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="Interfaces\ICloneable.cs" />
     <Compile Include="LogicObject.cs" />
     <Compile Include="RenderObject.cs" />
     <Compile Include="SceneObject.cs" />

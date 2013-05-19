@@ -38,5 +38,11 @@ namespace NavalWarfare
         {
             Application.Exit(); 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ESMLogic lll=new ESMLogic();
+            ESMLogic lll1=(ESMLogic)lll.Clone();
+        }
 	}
 }
