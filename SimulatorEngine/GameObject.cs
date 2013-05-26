@@ -9,7 +9,10 @@ namespace SimulatorEngine
 {
 	public class GameObject : ICloneable
     {
-        
+        public GameObject()
+        {
+            m_parentObject = null;
+        }
 		public GameObject(GameObject parentObj = null)
 		{
 			m_parentObject = parentObj;
@@ -52,7 +55,7 @@ namespace SimulatorEngine
                     //取得对象的Icloneable接口。                 
                     ICloneable IClone = (ICloneable)fi.GetValue(this);
                     //我们使用克隆方法给字段设定新值。                
-                    fields[i].SetValue(newObject, IClone.Clone());
+                    if(IClone!=null)fields[i].SetValue(newObject, IClone.Clone());
                 }
                 else
                 {
