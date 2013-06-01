@@ -73,6 +73,7 @@
     <Compile Include="LogicObjects\AeroDragLogic.cs" />
     <Compile Include="LogicObjects\AutoPilotLogic.cs" />
     <Compile Include="LogicObjects\BuoyancyLogic.cs" />
+    <Compile Include="LogicObjects\CatapultLogic.cs" />
     <Compile Include="LogicObjects\ConstantForce.cs" />
     <Compile Include="LogicObjects\DamageLogic.cs" />
     <Compile Include="LogicObjects\DragLogic.cs" />
@@ -123,6 +124,9 @@
     <EmbeddedResource Include="FormGame.resx">
       <DependentUpon>FormGame.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
